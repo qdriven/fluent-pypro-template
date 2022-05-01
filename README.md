@@ -1,5 +1,7 @@
 # README
 
+
+
 How to Use this template:
 
 1. Use as template in github
@@ -16,6 +18,7 @@ poetry build
 
 Done!
 
+More [poetry](https://python-poetry.org/docs/)
 ## More options
 
 1. pre-commit
