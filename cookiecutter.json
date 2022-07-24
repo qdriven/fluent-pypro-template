@@ -1,5 +1,6 @@
 {
   "project_name": "fluentqa-prj",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_description": "Awesome `{{ cookiecutter.project_name.lower().replace(' ', '-') }}` is a Python cli/package created with https://github.com/TezRomacH/python-package-template",
   "organization": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "license": [
