@@ -1,25 +1,43 @@
 [tool.poetry]
-name = "pypro-templates"
+name = "fluentqatpl"
 version = "0.1.0"
-description = ""
+description = "Cookiecutter templates for QA Project"
 authors = ["Patrick <fakepatrick@163.com>"]
 readme = "README.md"
+repository = "https://github.com/qdriven/fluent-pypro-template"
+homepage = "https://github.com/qdriven/fluent-pypro-template"
+keywords = ["python",
+    "cookiecutter",
+    "template",
+    "packages",
+    "makefile",
+    "best-practices",
+    "poetry",
+    "codestyle",
+    "formatters",
+    "python-packages",
+    "semantic-versions",
+    "QA",
+    "Testing",
+    "Tester",
+    "fluent-qa"
+]
+# ...
 packages = [
-    { include = "pypro_templates",from = "src" }
+    #    { include = "my_package" },
+    { include = "fluentqatpl", from = "src" },
 ]
-include = [
-    {path="tests",format="sdist"}
-]
-# homepage = "https://python-poetry.org/"
-# repository = "https://github.com/python-poetry/poetry"
-# documentation = "https://python-poetry.org/docs"
-# keywords = ["packaging", "dependency", "poetry"]
+#include = ["CHANGELOG.md"]
+#exclude = ["my_package/excluded.py"]
 # classifiers = [
 #     "Topic :: Software Development :: Build Tools",
 #     "Topic :: Software Development :: Libraries :: Python Modules"
 # ]
+classifiers = []
+
 [tool.poetry.dependencies]
 python = "^3.10"
+cookiecutter = "^1.7.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
@@ -39,18 +57,28 @@ mkdocs-material-extensions = "^1.0.3"
 pymdown-extensions = "^9.4"
 Pygments = "^2.12.0"
 mkdocs-minify-plugin = "^0.5.0"
-
-# [tool.poetry.build]
-# generate-setup-file = false
+pyupgrade = "^2.37.2"
+bandit = "^1.7.4"
+coverage = "^6.4.2"
+coverage-badge = "^1.1.0"
+pytest-html = "^3.1.1"
+safety = "^2.1.1"
+pylint = "^2.14.5"
+black = {version = "^21.10b0", allow-prereleases = true}
+darglint = "^1.8.1"
+isort = {extras = ["colors"], version = "^5.10.1"}
+mypy = "^0.910"
+mypy-extensions = "^0.4.3"
 
 # [tool.poetry.scripts]
 # poetry = "poetry.console.application:main"
 
+# [tool.poetry.build]
+# generate-setup-file = false
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-
 
 [tool.isort]
 py_version = 310
@@ -62,23 +90,53 @@ lines_after_imports = 2
 src_paths = ["src", "tests"]
 extend_skip = ["setup.py"]
 
-
 [tool.black]
 target-version = ['py310']
+line-length = 100
+color = true
 preview = true
 force-exclude = '''
 .*/setup\.py$
 '''
+exclude = '''
+/(
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | env
+    | venv
+)/
+'''
 
-
-# [tool.mypy]
-# check_untyped_defs = true
-# ignore_missing_imports = true
-# show_error_codes = true
-# warn_redundant_casts = true
-# warn_unused_configs = true
-# warn_unused_ignores = true
-# files = "src"
+[tool.mypy]
+python_version = 3.10
+pretty = true
+show_traceback = true
+color_output = true
+allow_redefinition = false
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+ignore_missing_imports = true
+implicit_reexport = false
+no_implicit_optional = true
+show_column_numbers = true
+show_error_codes = true
+show_error_context = true
+strict_equality = true
+strict_optional = true
+warn_no_return = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+warn_unused_ignores = true
 
 # The following whitelist is used to allow for incremental adoption
 # of Mypy. Modules should be removed from this whitelist as and when
@@ -101,7 +159,30 @@ force-exclude = '''
 # ignore_errors = true
 
 
-[tool.coverage.report]
+[tool.pytest.ini_options]
+# https://docs.pytest.org/en/6.2.x/customize.html#pyproject-toml
+# Directories that are not visited by pytest collector:
+norecursedirs =["{{ cookiecutter.project_name }}", "hooks", "*.egg", ".eggs", "dist", "build", "docs", ".tox", ".git", "__pycache__"]
+doctest_optionflags = ["NUMBER", "NORMALIZE_WHITESPACE", "IGNORE_EXCEPTION_DETAIL"]
+
+# Extra options:
+addopts = [
+  "--strict-markers",
+  "--tb=short",
+  "--doctest-modules",
+  "--doctest-continue-on-failure",
+]
+
+
+[tool.coverage.run]
+source = ["tests"]
+[coverage.paths]
+source = "hooks"
+[coverage.run]
+branch = true
+[coverage.report]
+fail_under = 50
+show_missing = true
 exclude_lines = [
     "pragma: no cover",
     "if TYPE_CHECKING:"
