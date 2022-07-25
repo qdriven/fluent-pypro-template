@@ -13,7 +13,7 @@
     9,10
   ],
   "minimal_python_version": [
-    3.9,3.10
+    "3.9","3.10"
   ],
   "github_name": "{{ cookiecutter.organization.lower().replace(' ', '_').replace('-', '_') }}",
   "email": "hello@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
