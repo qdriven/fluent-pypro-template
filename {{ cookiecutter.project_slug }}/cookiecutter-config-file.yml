@@ -2,6 +2,7 @@
 
 default_context:
   project_name: "{{ cookiecutter.project_name }}"
+  project_plug: "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
   project_description: "{{ cookiecutter.project_description }}"
   organization: "{{ cookiecutter.organization }}"
   license: "{{ cookiecutter.license }}"
