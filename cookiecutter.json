@@ -10,10 +10,12 @@
     "Apache Software License 2.0"
   ],
   "_all_python_minor_version": [
-    9,10
+    9,
+    10
   ],
   "minimal_python_version": [
-    "3.9","3.10"
+    "3.9",
+    "3.10"
   ],
   "github_name": "{{ cookiecutter.organization.lower().replace(' ', '_').replace('-', '_') }}",
   "email": "hello@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
@@ -21,7 +23,8 @@
   "line_length": 88,
   "create_example_template": [
     "cli",
-    "none"
+    "server",
+    "skel"
   ],
   "_copy_without_render": [
     "poetry.lock"

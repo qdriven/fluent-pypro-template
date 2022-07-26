@@ -46,8 +46,11 @@ python = "^{{ cookiecutter.minimal_python_version }}"
 typer = {extras = ["all"], version = "^0.6.1"}
 rich = "^12.5.1"
 {% endif %}
+
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
+
+{%+ if cookiecutter.create_example_template != 'skel' %}
 tox = "^3.25.0"
 pytest-cov = "^3.0.0"
 pytest-mock = "^3.7.0"
@@ -171,3 +174,4 @@ branch = true
 [coverage.report]
 fail_under = 50
 show_missing = true
+{% endif %}
