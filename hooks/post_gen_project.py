@@ -22,6 +22,7 @@ licences_dict = {
     "BSD-3": "bsd3",
     "GNU GPL v3.0": "gpl3",
     "Apache Software License 2.0": "apache",
+    "Personal":"v0.1"
 }
 
 
@@ -96,11 +97,11 @@ def print_further_instructions(project_name: str, github: str) -> None:
 
 def main() -> None:
     generate_license(directory=PROJECT_DIRECTORY, licence=licences_dict[LICENSE])
-    remove_unused_files(
-        directory=PROJECT_DIRECTORY,
-        module_name=PROJECT_MODULE,
-        need_to_remove_cli=CREATE_EXAMPLE_TEMPLATE != "cli",
-    )
+    # remove_unused_files(
+    #     directory=PROJECT_DIRECTORY,
+    #     module_name=PROJECT_MODULE,
+    #     need_to_remove_cli=CREATE_EXAMPLE_TEMPLATE != "cli",
+    # )
     print_further_instructions(project_name=PROJECT_NAME, github=GITHUB_USER)
 
 

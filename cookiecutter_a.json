@@ -19,5 +19,9 @@
     "telegram": "{{ cookiecutter.author_slug }}",
     "facebook": "{{ cookiecutter.author_slug }}",
     "instagram": "{{ cookiecutter.author_slug }}",
-    "youtube": "{{ cookiecutter.author_slug }}"
+    "youtube": "{{ cookiecutter.author_slug }}",
+    "create_example_template": [
+        "cli",
+        "server"
+      ],
 }
