@@ -23,5 +23,5 @@
     "create_example_template": [
         "cli",
         "server"
-      ],
+      ]
 }
