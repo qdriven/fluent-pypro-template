@@ -11,10 +11,10 @@ Follow the instruction to generate a template project.
 
 ## Templates
 
-1. [] Simple
-2. [] cli-typer
-3. [] cli-Fire
-4. [] server
+1. [*] simple
+2. [*] cli-typer
+3. [*] cli-fire
+4. [*] server
 
 ## How to Create template
 
