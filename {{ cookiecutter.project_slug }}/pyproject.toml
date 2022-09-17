@@ -59,6 +59,7 @@ sympy = "^1.10.1"
 pycrypto = "^2.6.1"
 SQLAlchemy = "^1.4.40"
 rich = "^12.5.1"
+qpyone={git="https://github.com/qdriven/qpyone.git",branch="main"}
 {% endif %}
 {%+ if cookiecutter.create_example_template == 'ds' %}
 SQLAlchemy = "^1.4.40"
