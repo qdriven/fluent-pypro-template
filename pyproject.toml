@@ -22,9 +22,8 @@ keywords = ["python",
     "Tester",
     "fluent-qa"
 ]
-# ...
+
 packages = [
-    #    { include = "my_package" },
     { include = "fluentqatpl", from = "src" },
 ]
 #include = ["CHANGELOG.md"]
