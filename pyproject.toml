@@ -32,7 +32,6 @@ packages = [
  classifiers = [
      "Topic :: Software Development :: Build Tools",
      "Topic :: Software Development :: Libraries :: Python Modules",
-     "QA-files"
  ]
 
 [tool.poetry.dependencies]
