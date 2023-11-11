@@ -1,7 +1,0 @@
-templates:
-  - https://github.com/TezRomacH/python-package-template.git
-  - https://github.com/leynier/python-template.git
-  - https://github.com/fpgmaas/cookiecutter-poetry.git
-  - https://github.com/zillionare/cookiecutter-pypackage.git
-  - https://github.com/rnag/cookiecutter-pypackage.git
-  - https://github.com/yxtay/python-project-template.git

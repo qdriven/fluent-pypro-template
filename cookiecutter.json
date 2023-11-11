@@ -1,7 +1,7 @@
 {
   "project_name": "fluentqa",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "project_description": "Awesome `{{ cookiecutter.project_slug }}` is a Python cli/package ",
+  "project_description": "`{{ cookiecutter.project_slug }}` is a Python cli/package ",
   "organization": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "license": [
     "MIT",
@@ -10,10 +10,10 @@
     "Apache Software License 2.0"
   ],
   "_all_python_minor_version": [
-    10
+    10,11,12
   ],
   "minimal_python_version": [
-    "3.10"
+    "3.10","3.11","3.12"
   ],
   "github_name": "{{ cookiecutter.organization.lower().replace(' ', '_').replace('-', '_') }}",
   "email": "hello@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
